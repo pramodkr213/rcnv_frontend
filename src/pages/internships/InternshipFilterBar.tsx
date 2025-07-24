@@ -56,7 +56,7 @@ export const InternshipFilterBar: React.FC<{
           placeholder="Search role"
           value={filters.role}
           onChange={handleChange}
-          className="bg-transparent outline-none"
+         className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
         />
       </div>
 
@@ -71,7 +71,7 @@ export const InternshipFilterBar: React.FC<{
           placeholder="Location"
           value={filters.location}
           onChange={handleChange}
-          className="bg-transparent outline-none"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
         />
       </div>
 
@@ -84,7 +84,7 @@ export const InternshipFilterBar: React.FC<{
           name="incentive"
           value={filters.incentive}
           onChange={handleChange}
-          className="bg-transparent cursor-pointer outline-none"
+         className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
         >
           <option value="">Incentive</option>
           <option value="paid">Paid</option>
@@ -101,7 +101,7 @@ export const InternshipFilterBar: React.FC<{
           name="internshipType"
           value={filters.internshipType}
           onChange={handleChange}
-          className="bg-transparent cursor-pointer outline-none"
+         className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
         >
           <option value="">Internship Type</option>
           <option value="Full Time">Full Time</option>
@@ -109,10 +109,10 @@ export const InternshipFilterBar: React.FC<{
         </select>
       </div>
 
-      <span className="border-l border-black h-6" />
+      {/* <span className="border-l border-black h-6" /> */}
 
       {/* Salary Range */}
-      <div className="flex flex-col gap-1">
+      {/* <div className="flex flex-col gap-1">
         <div className="flex gap-2 text-sm font-medium mb-1">
           <span>Stipend range</span>
           <span>
@@ -157,7 +157,7 @@ export const InternshipFilterBar: React.FC<{
               [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:-mt-1"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -55,36 +55,76 @@ const Login: React.FC = () => {
     }));
   };
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   if (
+  //     validateAdminLogin(
+  //       { email: form.email, password: form.password },
+  //       form.captcha,
+  //       setFormErrors
+  //     )
+  //   ) {
+  //     const loginReq: LoginRequest = {
+  //       email: form.email,
+  //       password: form.password,
+  //     };
+
+  //     setLoading(true);
+
+  //     await ToastMessage.promise(login(loginReq, "ADMIN"), {
+  //       loading: "Logging in....",
+  //       success: "Login Successfull!",
+  //       error: "Invalid credentials",
+  //     });
+
+  //     setFormErrors("adminLogin", {});
+
+  //     navigate("/admin/dashboard");
+      
+  //   }
+  //   setLoading(false);
+  // };
+
+
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (
-      validateAdminLogin(
-        { email: form.email, password: form.password },
-        form.captcha,
-        setFormErrors
-      )
-    ) {
-      const loginReq: LoginRequest = {
-        email: form.email,
-        password: form.password,
-      };
+  if (
+    validateAdminLogin(
+      { email: form.email, password: form.password },
+      form.captcha,
+      setFormErrors
+    )
+  ) {
+    const loginReq: LoginRequest = {
+      email: form.email,
+      password: form.password,
+    };
 
-      setLoading(true);
+    setLoading(true);
 
+    try {
       await ToastMessage.promise(login(loginReq, "ADMIN"), {
-        loading: "Logging in....",
-        success: "Login Successfull!",
-        error: "Failed to login",
+        loading: "Logging in...",
+        success: "Login successful!",
+        error: (err) => {
+          if (err?.response?.status === 404) {
+            return "User not registered. Please sign up.";
+          }
+          return "Invalid credentials";
+        },
       });
 
       setFormErrors("adminLogin", {});
-
       navigate("/admin/dashboard");
-
-      setLoading(false);
+    } catch (err) {
+      // Optional: you can log or handle additional error actions here
+    } finally {
+      setLoading(false); // This ensures loading is false even if login fails
     }
-  };
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-purple-200">

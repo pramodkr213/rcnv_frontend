@@ -85,12 +85,12 @@ const Header = () => {
                 {!user && (
                   <>
                     <div className="dropdown custom-dropdown">
-                      <button
+                      <span
                         className="nav-link text-white btn-login dropdown-toggle"
                         type="button"
                       >
                         Sign up
-                      </button>
+                      </span>
                       <ul className="dropdown-menu drop-first">
                         <li className="nav-item">
                           <NavLink
@@ -181,14 +181,56 @@ const Header = () => {
                                     Club Members
                                   </NavLink>
                                 </li>
-                              </ul>
-                            </li>
-                            <li className="nav-item">
+                                 <li className="nav-item">
                               <NavLink className="nav-link" to="/directors">
                                 {" "}
                                 Directors
                               </NavLink>
                             </li>
+                              </ul>
+                            </li>
+                      
+
+
+   <li className="nav-item ">
+                              <a
+                                className="nav-link "
+                                href="#"
+                                aria-expanded="false"
+                              >
+                                Flagship Projects
+                              </a>
+                              <ul className="dropdown-menu drop-first">
+                                <li className="nav-item">
+                                  <NavLink
+                                    className="nav-link border-bottom-1px dropdown-color"
+                                    to="#"
+                                  >
+                                    MUNA
+                                  </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                  <NavLink
+                                    className="nav-link border-bottom-1px dropdown-color"
+                                    to="#"
+                                  >
+                            KIDATHON
+                                  </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                  <NavLink
+                                    className="nav-link border-bottom-1px dropdown-color"
+                                    to="#"
+                                  >
+                                    DHADKAN
+                                  </NavLink>
+                                </li>
+                                 
+                              </ul>
+                            </li>
+
+
+
                             <li className="nav-item ">
                               <a
                                 className="nav-link "

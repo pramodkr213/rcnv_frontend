@@ -39,7 +39,8 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
         await ToastMessage.promise(login(formData, props.role), {
           loading: "Logging in...",
           success: "Login Successfull!",
-          error: "Failed to login",
+         error: "Invalid credentials, Please sign up",
+
         });
 
         setFormErrors("login", {});

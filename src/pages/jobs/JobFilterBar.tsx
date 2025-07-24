@@ -89,7 +89,7 @@ export const JobFilterBar: React.FC<{
           name="experience"
           value={filters.experience}
           onChange={handleChange}
-          className="bg-transparent cursor-pointer outline-none"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
         >
           <option value="">Experience</option>
           <option value="fresher">Fresher</option>
@@ -109,7 +109,7 @@ export const JobFilterBar: React.FC<{
           name="jobType"
           value={filters.jobType}
           onChange={handleChange}
-          className="bg-transparent cursor-pointer outline-none"
+         className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
         >
           <option value="">Job Type</option>
           <option value="Full Time">Full Time</option>

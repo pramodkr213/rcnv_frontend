@@ -11,18 +11,17 @@ const ContactUs = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-gray-700">Address</h3>
             <p className="text-gray-600 leading-relaxed">
-              Plor 17/1, Amar Plaza,
+              Plor 185, Friends Colony,
               <br />
-              Salt Lake SMS India Road,
+              Katol Road, Nagpur
+             
               <br />
-              IT Park Rd., Beside Persistent,
-              <br />
-              Nagpur, Maharashtra - 440022
+               Maharashtra - 440013
             </p>
 
             <div className="mt-4">
               <h3 className="text-lg font-semibold text-gray-700">Email</h3>
-              <p className="text-gray-600">info@yourcompany.com</p>
+              <p className="text-gray-600">shahurb@rknec.edu</p>
             </div>
 
             <div>

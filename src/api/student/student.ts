@@ -74,7 +74,7 @@ export const getStudentApplicationsApi = async () => {
 };
 
 export const getStudentBookmarksApi = async () => {
-  const response = await axios.get("/api/student/bookmarks");
+  const response = await axios.get("/api/student/bookmarkedJobs");
   return response.data;
 };
 
