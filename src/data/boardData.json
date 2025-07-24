@@ -1,0 +1,80 @@
+[
+  {
+    "imageUrl": "/img/boards/president.jpg",
+    "position": "PRESIDENT",
+    "name": "Rtn.Rashmi Shahu"
+  },
+  {
+    "imageUrl": "/img/boards/president_elect.jpg",
+    "position": "PRESIDENT ELECT",
+    "name": " Rtn.Jugal Kishor Agrawal"
+  },
+  {
+    "imageUrl": "/img/boards/vice_president.jpg",
+    "position": "VICE PRESIDENT",
+    "name": "Rtn.Akshay Daga"
+  },
+  {
+    "imageUrl": "/img/boards/secretary.jpg",
+    "position": "SECRETARY",
+    "name": "Rtn.Abhay Upadhye"
+  },
+  {
+    "imageUrl": "/img/boards/treasurer.jpg",
+    "position": "TREASURER",
+    "name": " Rtn.Yogesh Paliwal "
+  },
+
+  {
+    "imageUrl": "/img/boards/secretary_py.jpg",
+    "position": "JT SECRETARY",
+    "name": "Rtn.Prashant Yadav"
+  },
+  {
+    "imageUrl": "/img/boards/sergeant_at_arms.jpg",
+    "position": "SERGEANT AT ARMS",
+    "name": "Rtn.Sangeeta Tajpuriya"
+  },
+  {
+    "imageUrl": "/img/boards/director_admin_finance.jpg",
+    "position": "DIRECTOR ADMIN & FINANCE",
+    "name": "Bhagyashri Saoji"
+  },
+  {
+    "imageUrl": "/img/boards/director_public_image.jpg",
+    "position": "DIRECTOR PUBLIC IMAGE",
+    "name": "Rtn. Meghna Nene"
+  },
+
+  {
+    "imageUrl": "/img/boards/director_trf_iternatonal.jpg",
+    "position": "DIRECTOR TRF& INTERNATIONAL",
+    "name": "Rtn Sapna Vastani"
+  },
+  {
+    "imageUrl": "/img/boards/director_youth.jpg",
+    "position": "DIRECTOR YOUTH",
+    "name": "Rtn Amit Jeswani"
+  },
+
+  {
+    "imageUrl": "/img/boards/director_vocation.jpg",
+    "position": "DIRECTOR VOCATION",
+    "name": "Rtn. Garima Gupta"
+  },
+  {
+    "imageUrl": "/img/boards/director_comunity_service.jpg",
+    "position": "DIRECTOR Community Service",
+    "name": "Rtn Vicky Mulchandani"
+  },
+  {
+    "imageUrl": "/img/boards/director_medical.jpg",
+    "position": "DIRECTOR  MEDICAL",
+    "name": "Rtn Girish Chhabrani"
+  },
+  {
+    "imageUrl": "/img/boards/iip.jpg",
+    "position": "IPP",
+    "name": "Rtn. Jaishree Chhabrani"
+  }
+]

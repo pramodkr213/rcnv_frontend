@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "title": "Java Developer",
+    "company": "Prevoyance IT Solutions",
+    "experience": "2-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/logo-prev.png",
+    "description": "Join our backend engineering team to design and implement enterprise-level applications using Java, Spring Boot, and Hibernate. You will be responsible for building scalable microservices, maintaining code quality through unit testing, and collaborating with front-end and DevOps teams to deploy solutions seamlessly.",
+    "sector": "Information Technology"
+  },
+  {
+    "id": 2,
+    "title": "Loan Officer",
+    "company": "Global Infobase Solutions",
+    "experience": "0-2 years",
+    "location": "Pune",
+    "logo": "/img/logo/GIS-logo.jpg",
+    "description": "As a Loan Officer, you will assist customers with loan applications, verify required documentation, and ensure compliance with SBI policies. You’ll also advise clients on suitable loan products and help them navigate interest rates and EMI structures effectively.",
+    "sector": "Banking Sector"
+  },
+  {
+    "id": 3,
+    "title": "Sales Representative",
+    "company": "Global Infobase Solutions",
+    "experience": "3-4 years",
+    "location": "Bangalore",
+    "logo": "/img/logo/GIS-logo.jpg",
+    "description": "We are seeking an energetic Sales Representative to promote our IT services and software solutions to business clients. Responsibilities include generating leads, negotiating contracts, and maintaining relationships to ensure recurring business and customer satisfaction.",
+    "sector": "Sales"
+  },
+  {
+    "id": 4,
+    "title": "Flutter Developer",
+    "company": "Prevoyance IT Solutions",
+    "experience": "2-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/logo-prev.png",
+    "description": "We are looking for a Flutter Developer with a strong grasp of Dart and cross-platform development. You will be responsible for creating seamless mobile experiences, integrating REST APIs, and optimizing performance for both Android and iOS applications.",
+    "sector": "Information Technology"
+  },
+  {
+    "id": 5,
+    "title": ".Net Developer",
+    "company": "Prevoyance IT Solutions",
+    "experience": "2-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/logo-prev.png",
+    "description": "Join our .NET development team to work on modern web applications using ASP.NET MVC, C#, and SQL Server. You will develop backend logic, integrate with third-party services, and ensure application security and performance meet corporate standards.",
+    "sector": "Information Technology"
+  },
+  {
+    "id": 6,
+    "title": "React Developer",
+    "company": "Prevoyance IT Solutions",
+    "experience": "2-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/logo-prev.png",
+    "description": "We are hiring a React Developer to build dynamic and responsive front-end applications. You'll be working with Redux, APIs, and modern UI libraries to create user-friendly dashboards and tools for our enterprise clients.",
+    "sector": "Information Technology"
+  },
+  {
+    "id": 7,
+    "title": "Credit Analyst",
+    "company": "IMS",
+    "experience": "0-1 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/IMS.jpg",
+    "description": "Analyze creditworthiness of loan applicants by reviewing financial statements, credit reports, and market conditions. Provide risk assessment reports to help managers make informed lending decisions in alignment with RBI regulations.",
+    "sector": "Banking Sector"
+  },
+  {
+    "id": 8,
+    "title": "Branch Manager",
+    "company": "IMS",
+    "experience": "2-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/IMS.jpg",
+    "description": "Oversee the daily operations of the branch, ensure customer satisfaction, manage staff performance, and meet sales targets. Coordinate with head office for policy implementations and compliance adherence.",
+    "sector": "Banking Sector"
+  },
+  {
+    "id": 9,
+    "title": "Financial Analyst",
+    "company": "My Campus Recruitment",
+    "experience": "0-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/cms.png",
+    "description": "We’re seeking a Financial Analyst to provide insightful reports and forecasts based on large datasets. Responsibilities include budget planning, variance analysis, and support for investment strategies in collaboration with senior management.",
+    "sector": "Banking Sector"
+  },
+  {
+    "id": 10,
+    "title": "Sales Representative",
+    "company": "My Campus Recruitment",
+    "experience": "0-4 years",
+    "location": "Mumbai",
+    "logo": "/img/logo/cms.png",
+    "description": "Represent our company’s services to potential clients. You will conduct product presentations, manage inbound inquiries, follow up on leads, and work to close deals that meet sales quotas and KPIs.",
+    "sector": "Sales"
+  },
+  {
+    "id": 11,
+    "title": "Account Executive",
+    "company": "My Campus Recruitment",
+    "experience": "4-5 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/cms.png",
+    "description": "As an Account Executive, your job will be to maintain and grow strategic client accounts. You’ll collaborate with cross-functional teams to deliver projects, resolve client issues, and identify upselling opportunities.",
+    "sector": "Sales"
+  },
+  {
+    "id": 12,
+    "title": "Sales Manager",
+    "company": "Neosynergy",
+    "experience": "2-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/Neosynergy.jpg",
+    "description": "Lead the regional sales team and drive revenue through performance tracking, sales strategy development, and team mentoring. You'll also coordinate with marketing and product teams to enhance market presence and brand loyalty.",
+    "sector": "Sales"
+  },
+  {
+    "id": 13,
+    "title": "Academic Counselor",
+    "company": "Gradient Infotech",
+    "experience": "1-3 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/gradient.png",
+    "description": "Guide students with career counseling, course selection, and academic planning. Assist in student enrollment and collaborate with faculty for student progress tracking.",
+    "sector": "Education"
+  },
+  {
+    "id": 14,
+    "title": "Training Coordinator",
+    "company": "IMS",
+    "experience": "0-2 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/IMS.jpg",
+    "description": "Coordinate and schedule training programs, liaise with trainers, and manage student feedback and learning outcomes for career development initiatives.",
+    "sector": "Education"
+  },
+  {
+    "id": 15,
+    "title": "Placement Officer",
+    "company": "My Campus Recruitment",
+    "experience": "2-5 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/cms.png",
+    "description": "Build corporate relations, schedule campus drives, and prepare students for interviews and GDs through continuous mentorship and communication.",
+    "sector": "Education"
+  },
+  {
+    "id": 16,
+    "title": "E-learning Content Creator",
+    "company": "Global Infobase Solutions",
+    "experience": "1-3 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/GIS-logo.jpg",
+    "description": "Design engaging video and PDF content for online learning platforms. Work with subject matter experts to prepare accurate, student-friendly material.",
+    "sector": "Education"
+  },
+  {
+    "id": 17,
+    "title": "Sales Executive - Property",
+    "company": "Prevoyance IT Solutions",
+    "experience": "1-3 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/logo-prev.png",
+    "description": "Engage with property buyers and investors, schedule site visits, and provide complete assistance from inquiry to final sale in real estate projects.",
+    "sector": "Realestate"
+  },
+  {
+    "id": 18,
+    "title": "Real Estate Marketing Executive",
+    "company": "Global Infobase Solutions",
+    "experience": "0-2 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/GIS-logo.jpg",
+    "description": "Promote upcoming residential and commercial projects via digital and offline campaigns. Generate leads and follow up with prospective clients.",
+    "sector": "Realestate"
+  },
+  {
+    "id": 19,
+    "title": "Customer Relationship Officer",
+    "company": "Neosynergy",
+    "experience": "1-3 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/Neosynergy.jpg",
+    "description": "Manage customer inquiries and maintain relationships with real estate clients. Ensure client satisfaction and handle documentation efficiently.",
+    "sector": "Realestate"
+  },
+  {
+    "id": 20,
+    "title": "Site Coordinator",
+    "company": "Gradient Infotech",
+    "experience": "2-4 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/gradient.png",
+    "description": "Coordinate on-site activities, handle vendor communication, and ensure timely project execution for residential and commercial properties.",
+    "sector": "Realestate"
+  },
+  {
+    "id": 21,
+    "title": "Front Desk Executive",
+    "company": "Neosynergy",
+    "experience": "1-2 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/Neosynergy.jpg",
+    "description": "Manage reception operations, coordinate client appointments, handle phone/email queries, and maintain a positive office environment.",
+    "sector": "Miscellaneous"
+  },
+  {
+    "id": 22,
+    "title": "Operations Assistant",
+    "company": "Global Infobase Solutions",
+    "experience": "0-1 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/GIS-logo.jpg",
+    "description": "Support daily office operations including inventory tracking, data entry, and vendor coordination. Ensure timely documentation and record maintenance.",
+    "sector": "Miscellaneous"
+  },
+  {
+    "id": 23,
+    "title": "Technical Support Executive",
+    "company": "Prevoyance IT Solutions",
+    "experience": "1-3 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/logo-prev.png",
+    "description": "Provide hardware and software support to clients via phone, email, or remote login. Troubleshoot common IT issues and maintain SLA adherence.",
+    "sector": "Miscellaneous"
+  },
+  {
+    "id": 24,
+    "title": "Office Administrator",
+    "company": "IMS",
+    "experience": "1-2 years",
+    "location": "Nagpur",
+    "logo": "/img/logo/IMS.jpg",
+    "description": "Oversee administrative functions, manage supplies, handle correspondence, and assist with HR and accounting documentation.",
+    "sector": "Miscellaneous"
+  }
+]
