@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getDashboard } from "../../../api/employer/employer.ts";
+import { getDashboard, getInternshipsApi, getJobsApi } from "../../../api/employer/employer.ts";
 import { getDecryptedAuthCookie } from "../../../utils/cookieCrypto.ts";
 import StatsCard from "../../../components/StatsCard.tsx";
 
@@ -27,16 +27,39 @@ const Dashboard: React.FC = () => {
     },
   });
 
+const {
+  data: jobsData,
+} = useQuery({
+  queryKey: ["jobs"],
+  queryFn: async () => {
+    const res = await getJobsApi();
+    return res; // returning the full response with totalCount
+  },
+});
+
+  const {
+  data: internshipsData,
+} = useQuery({
+  queryKey: ["internships"],
+  queryFn: async () => {
+    const res = await getInternshipsApi();
+    return res;
+  },
+});
+
+  
+
   const cards = [
     {
       title: "Total jobs posted by you",
-      count: data?.totalJobs || 0,
+   count: jobsData?.totalCount || 0,
+
       buttonText: "View Jobs",
       onclick: () => navigate("/employer/my-jobs"),
     },
     {
       title: "Total internships posted by you",
-      count: data?.totalInternships || 0,
+   count: internshipsData?.totalCount || 0,
       buttonText: "View Internships",
       onclick: () => navigate("/employer/my-internships"),
     },
