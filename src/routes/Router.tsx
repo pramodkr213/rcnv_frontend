@@ -184,6 +184,14 @@ const router = createBrowserRouter([
         element: <CareerePage />,
       },
       {
+        path: "/career/aftergraduation",
+        element: <CareerePage />,
+      },
+      {
+        path: "/career/govsector",
+        element: <CareerePage />,
+      },
+      {
         path: "jobs",
         element: (
           <JobFilterProvider>
