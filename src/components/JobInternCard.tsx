@@ -27,7 +27,7 @@ const fetchBookmarks = async () => {
     const res = isJob
       ? await getStudentBookmarksApi()
       : await getStudentBookmarkedInternshipsApi();
-    const ids = res.data.map((item) => item.id.toString());
+    const ids = res.data.map((item:any) => item.id.toString());
     setBookmarkedIds(new Set(ids));
   } catch (err) {
     console.error("Failed to load bookmarks", err);
@@ -87,7 +87,7 @@ useEffect(() => {
         {/* Company Name */}
 
         {/* Title & Logo */}
-        <div className="flex flex-col gap-2"  onClick={handleClick}>
+        <div className="flex flex-col gap-2" >
           <div className="flex mt-2 flex-row items-center justify-between gap-3">
             <h2 className=" font-bold text-black leading-tight">
               {data.title} <br className="sm:hidden" />
@@ -148,7 +148,7 @@ useEffect(() => {
           </div>
         </div>
 
-        <button className="bg-orange-500 text-white cursor-pointer px-4 py-2 rounded-full text-sm ">
+        <button  onClick={handleClick} className="bg-orange-500 text-white cursor-pointer px-4 py-2 rounded-full text-sm ">
           Details
         </button>
       </div>
@@ -226,7 +226,7 @@ useEffect(() => {
           </div>
         </div>
 
-        <button className="bg-orange-500 text-white cursor-pointer px-4 py-2 rounded-full text-sm">
+        <button  onClick={handleClick} className="bg-orange-500 text-white cursor-pointer px-4 py-2 rounded-full text-sm">
           Details
         </button>
       </div>
