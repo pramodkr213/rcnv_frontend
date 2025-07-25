@@ -32,6 +32,11 @@ const Internships: React.FC = () => {
   const onFilter = (filters: InternshipFilterState) => {
     console.log(filters);
   };
+
+
+
+
+  
   return (
     <section>
       <div className="mb-6 hidden lg:block">

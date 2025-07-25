@@ -72,7 +72,7 @@ export const getInternshipsApi = async (
       page: filter.page,
       title: filter.role ? filter.role : null,
       location: filter.location ? filter.location : null,
-      intershipType:
+      internshipType:
         filter.internshipType === "" ? null : filter.internshipType,
       mode: filter.mode === "" ? null : filter.mode,
       isPaid: filter.incentive === "" ? null : filter.incentive === "paid",

@@ -180,8 +180,8 @@ const InternshipDetail: React.FC = () => {
                       disabled={data?.isApplied || false}
                       className={`w-full ${
                         data?.isApplied
-                          ? "bg-gray-200 text-gray-800"
-                          : "bg-blue-600 hover:bg-blue-700 text-white"
+                         ? "bg-gray-200 text-gray-800"
+                          : "bg-orange-500 hover:bg-orange-600 text-white"
                       }  font-semibold py-2 px-4 rounded-full transition`}
                     >
                       {data?.isApplied ? "Applied" : " Apply Now"}
@@ -227,8 +227,8 @@ const InternshipDetail: React.FC = () => {
               disabled={data?.isApplied || false}
               className={`w-80 ${
                 data?.isApplied
-                  ? "bg-gray-200 text-gray-800"
-                  : "bg-blue-600 hover:bg-blue-700 text-white"
+                ? "bg-gray-200 text-gray-800"
+                  : "bg-orange-500 hover:bg-orange-600 text-white"
               } py-2 rounded  transition text-sm font-semibold`}
             >
               {data?.isApplied ? "Applied" : " Apply Now"}

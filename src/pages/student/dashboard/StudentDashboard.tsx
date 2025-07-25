@@ -62,8 +62,8 @@ const StudentDashboard: React.FC = () => {
 
   // Mock data for demonstration (replace with actual API data)
   const mockDashboardData = {
-    totalApplications: 12,
-   totalBookmarks: bookmarksData ? bookmarksData.length : 0,
+  totalApplications: applicationsData?.totalCount ?? 0,
+  totalBookmarks: bookmarksData?.totalCount ?? 0, 
     profileCompletion: 85,
     recentApplications: [
       {

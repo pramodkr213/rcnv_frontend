@@ -1,9 +1,12 @@
-import React from "react";
-import { Bookmark, Briefcase, IndianRupee, MapPin } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Bookmark, BookmarkCheck, Briefcase, IndianRupee, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../utils/helper";
 import type { JobCard } from "../types/JobCard";
 import type { InternshipCard } from "../types/InternshipCard";
+import axios from "axios";
+import { bookmarkInternship, bookmarkJob, getStudentBookmarkedInternshipsApi, getStudentBookmarksApi } from "../api/student/student";
+import toast from "react-hot-toast";
 
 interface JobInternCardProps {
   data: JobCard | InternshipCard;
@@ -19,10 +22,47 @@ const JobInternCard: React.FC<JobInternCardProps> = (props) => {
     if (isJob) navigate(`/jobs/detail/${data.id}`);
     else navigate(`/internships/detail/${data.id}`);
   };
+const fetchBookmarks = async () => {
+  try {
+    const res = isJob
+      ? await getStudentBookmarksApi()
+      : await getStudentBookmarkedInternshipsApi();
+    const ids = res.data.map((item) => item.id.toString());
+    setBookmarkedIds(new Set(ids));
+  } catch (err) {
+    console.error("Failed to load bookmarks", err);
+  }
+};
+const handleBookmarkClick = async () => {
+  try {
+    const res = isJob
+      ? await bookmarkJob(data.id.toString())
+      : await bookmarkInternship(data.id.toString());
+
+    toast.success(res.message || "Bookmarked!");
+    fetchBookmarks(); // Refresh the state
+  } catch (e: any) {
+    toast.error(e?.message || "Bookmark failed");
+  }
+};
+
+
+
+
+  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
+  
+
+useEffect(() => {
+   
+
+    fetchBookmarks();
+  }, []);
+
+  const isBookmarked = bookmarkedIds.has(data.id.toString());
 
   return isJob ? (
     <div
-      onClick={handleClick}
+     
       className="w-full max-w-full hover:scale-105 sm:max-w-full md:max-w-md cursor-pointer flex flex-col gap-2 rounded-2xl border border-gray-200 shadow-md overflow-hidden transition-all duration-200 hover:shadow-lg"
     >
       {/* Card Body */}
@@ -33,15 +73,21 @@ const JobInternCard: React.FC<JobInternCardProps> = (props) => {
             {formatDate(data.createdAt)}
           </div>
 
-          <button className="bg-white rounded-full p-2">
-            <Bookmark className="w-5 h-5 rounded-full text-gray-500" />
-          </button>
+<button onClick={handleBookmarkClick}>
+  {isBookmarked ? (
+    <BookmarkCheck className="w-5 h-5 text-yellow-500" />
+  ) : (
+    <Bookmark className="w-5 h-5 text-gray-500" />
+  )}
+</button>
+
+
         </div>
 
         {/* Company Name */}
 
         {/* Title & Logo */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2"  onClick={handleClick}>
           <div className="flex mt-2 flex-row items-center justify-between gap-3">
             <h2 className=" font-bold text-black leading-tight">
               {data.title} <br className="sm:hidden" />
@@ -109,7 +155,7 @@ const JobInternCard: React.FC<JobInternCardProps> = (props) => {
     </div>
   ) : (
     <div
-      onClick={handleClick}
+    
       className="w-full max-w-full hover:scale-105 sm:max-w-full md:max-w-md cursor-pointer flex flex-col gap-2 rounded-2xl border border-gray-200 shadow-md overflow-hidden transition-all duration-200 hover:shadow-lg"
     >
       {/* Card Body */}
@@ -120,15 +166,20 @@ const JobInternCard: React.FC<JobInternCardProps> = (props) => {
             {formatDate(data.createdAt)}
           </div>
 
-          <button className="bg-white rounded-full p-2">
-            <Bookmark className="w-5 h-5 text-gray-500" />
-          </button>
+ <button onClick={handleBookmarkClick}>
+  {isBookmarked ? (
+    <BookmarkCheck className="w-5 h-5 text-yellow-500" />
+  ) : (
+    <Bookmark className="w-5 h-5 text-gray-500" />
+  )}
+</button>
+
         </div>
 
         {/* Company Name */}
 
         {/* Title & Logo */}
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1"   onClick={handleClick}>
           <div className="flex mt-2 flex-row items-center justify-between gap-2">
             <h2 className="text-lg font-bold text-black leading-tight">
               {data.title} <br className="sm:hidden" />
@@ -175,7 +226,7 @@ const JobInternCard: React.FC<JobInternCardProps> = (props) => {
           </div>
         </div>
 
-        <button className="bg-black text-white cursor-pointer px-4 py-2 rounded-full text-sm hover:bg-gray-800">
+        <button className="bg-orange-500 text-white cursor-pointer px-4 py-2 rounded-full text-sm">
           Details
         </button>
       </div>

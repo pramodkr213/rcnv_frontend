@@ -19,7 +19,7 @@ const defaultJobFilters: JobFilterState = {
   location: "",
   experience: "",
   jobType: "",
-  salary: [15000, 50000],
+  salary: [0, 11000000000],
   days: 1,
   mode: "",
   sector:""

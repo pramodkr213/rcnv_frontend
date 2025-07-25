@@ -68,8 +68,39 @@ export const getStudentDashboardApi = async () => {
   return response.data;
 };
 
+
+
+export const bookmarkJob = async (
+  id: string | number
+): Promise<{ success: boolean; message: string }> => {
+  const response = await axios.post(
+    `/api/student/bookmarkjob/${id}`, // dynamic path variable
+  );
+  return response.data;
+};
+
+
+
+export const bookmarkInternship = async (
+  id: string | number
+): Promise<{ success: boolean; message: string }> => {
+  const response = await axios.post(`/api/student/bookmarkInternship/${id}`);
+  return response.data;
+};
+export const getStudentBookmarkedInternshipsApi = async (): Promise<{
+  success: boolean;
+  message: string;
+  data: { id: string | number }[];
+}> => {
+  const response = await axios.get(`/api/student/bookmarkedInternships`);
+  return response.data;
+};
+
+
+
+
 export const getStudentApplicationsApi = async () => {
-  const response = await axios.get("/api/student/applications");
+  const response = await axios.get("/api/student/appliedJobs");
   return response.data;
 };
 
