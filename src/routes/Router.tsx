@@ -6,6 +6,8 @@ import AddClubMember from "../pages/AddClubMembers.tsx";
 import AllClubMembers from "../pages/AllClubMembers.tsx";
 import CareerePage from "../pages/jobs/CareerePage.tsx";
 import Enginnering from "../pages/enginnering.tsx";
+import UPSC from "../components/CareerPage/UPSC.tsx";
+import CAT from "../components/CareerPage/CAT.tsx";
 // import AdminLayout from "../layout/AdminLayout";
 // import { type User } from "../context/AuthContext";
 // import { decryptFromCookie } from "../utils/cookieCrypto";
@@ -236,8 +238,16 @@ const router = createBrowserRouter([
         element: <UpEvtPage />,
       },
        {
-        path: "/engineering",
+        path: "/ug-courses",
         element: <Enginnering />,
+      },
+      {
+        path: "/govtsector",
+        element: <UPSC />,
+      },
+       {
+        path: "/aftergraduation-courses",
+        element: <CAT />,
       },
       
     ],

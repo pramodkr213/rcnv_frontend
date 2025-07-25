@@ -2,33 +2,33 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const categories12th = [
-  { name: "Engineering", url: "/engineering" },
-  { name: "Medical", url: "/engineering" },
-  { name: "Management", url: "/engineering" },
-  { name: "Law", url: "/engineering" },
-  { name: "Commerce", url: "/engineering" },
-  { name: "Science", url: "/engineering" },
-  { name: "Arts", url: "/engineering" },
+  { name: "Engineering", url: "/ug-courses" },
+  { name: "Medical", url: "/ug-courses" },
+  { name: "Management", url: "/ug-courses" },
+  { name: "Law", url: "/ug-courses" },
+  { name: "Commerce", url: "/ug-courses" },
+  { name: "Science", url: "/ug-courses" },
+  { name: "Arts", url: "/ug-courses" },
 ];
 
 const categoriesgraduation = [
-  { name: "Management", url: "/engineering" },
-  { name: "Masters", url: "/engineering" },
-  { name: "MD", url: "/engineering" },
-  { name: "Law", url: "/engineering" },
-  { name: "Commerce", url: "/engineering" },
-  { name: "Science", url: "/engineering" },
-  { name: "Arts", url: "/engineering" },
+  { name: "Management", url: "/aftergraduation-courses" },
+  { name: "Masters", url: "/aftergraduation-courses" },
+  { name: "MD", url: "/aftergraduation-courses" },
+  { name: "Law", url: "/aftergraduation-courses" },
+  { name: "Commerce", url: "/aftergraduation-courses" },
+  { name: "Science", url: "/aftergraduation-courses" },
+  { name: "Arts", url: "/aftergraduation-courses" },
 ];
 
 const categoriesGovt = [
-  { name: "Banking", url: "/engineering" },
-  { name: "Railway", url: "/engineering" },
-  { name: "Airforce", url: "/engineering" },
-  { name: "Army", url: "/engineering" },
-  { name: "UPSC(IAS/IPS)", url: "/engineering" },
-  { name: "UPSC(IES)", url: "/engineering" },
-  { name: "MPSC", url: "/engineering" },
+  { name: "Banking", url: "/govtsector" },
+  { name: "Railway", url: "/govtsector" },
+  { name: "Airforce", url: "/govtsector" },
+  { name: "Army", url: "/govtsector" },
+  { name: "UPSC(IAS/IPS)", url: "/govtsectorg" },
+  { name: "UPSC(IES)", url: "/govtsector" },
+  { name: "MPSC", url: "/govtsector" },
 ];
 const CareerPage: React.FC = () => {
   const location = useLocation();
