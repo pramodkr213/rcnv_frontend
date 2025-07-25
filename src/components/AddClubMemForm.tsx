@@ -59,7 +59,7 @@ const AddClubMemForm = () => {
 
       ToastMessage.success("Club Member added successfully.");
       queryClient.invalidateQueries({ queryKey: ["members"] });
-      navigate("/all-club-members");
+      navigate("/admin/all-club-members");
 
       // Reset form
       setName("");

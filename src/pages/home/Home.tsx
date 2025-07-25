@@ -16,7 +16,7 @@ import Carousel from "bootstrap/js/dist/carousel";
 import { getJobsApi, getJobsBySectorApi, type SectorFilter } from "../../api/public/public";
 import type { JobFilterState } from "../../context/jobility/JobFilterContext";
 import type { JobCard } from "../../types/JobCard";
-
+import { MemberApi } from "../../api/clubmem";
 const Home = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -84,6 +84,12 @@ const Home = () => {
     queryKey: ["images"],
     queryFn: HeroImageApi.getHeroImages,
   });
+
+   const { data: birthdays = [] } = useQuery({
+    queryKey: ["birthdays"],
+    queryFn: MemberApi.getMembirthdays,
+  });
+
 
   // const { data: jobs1 = [] } = useQuery({
   //   queryKey: ["jobs1"],
@@ -617,9 +623,34 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+<section className="p-4">
+  <h2 className="text-xl font-semibold mb-4">Birthdays & Anniversaries</h2>
+
+  {birthdays.length === 0 ? (
+    <p className="text-gray-500">No data</p>
+  ) : (
+    <div className="flex overflow-x-auto space-x-3 pb-2 flex-nowrap scroll-smooth">
+      {birthdays.map((person) => (
+        <div
+          key={person.id}
+          className="w-48 flex-shrink-0 bg-white shadow rounded-lg p-3"
+        >
+          <h3 className="text-base font-medium truncate">{person.name}</h3>
+          <p className="text-sm text-gray-600">{person.type}</p>
+          <p className="text-xs text-gray-500">
+            {new Date(person.date).toLocaleDateString()}
+          </p>
+        </div>
+      ))}
+    </div>
+  )}
+</section>
+
         <section className="container mt-4">
         <MediaAndEvents />
       </section>
+
       {/* <!-- mission goal section end --> */}
       <section className="my-10">
         <div className="container mt-5">

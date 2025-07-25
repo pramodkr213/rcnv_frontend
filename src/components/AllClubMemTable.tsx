@@ -39,7 +39,7 @@ const AllClubMemTable = () => {
   const deleteMutation = useMutation({
     mutationFn: MemberApi.deleteMember,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["Member-admin"] });
+      queryClient.invalidateQueries({ queryKey: ["Member-admin",0] });
       ToastMessage.success(" Member deleted successfully.");
     },
     onError: () => {
