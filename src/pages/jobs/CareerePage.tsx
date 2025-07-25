@@ -22,8 +22,8 @@ const CareerePage: React.FC = () => {
         {/* Job listings */}
         <div className="flex-1 flex flex-col items-center lg:items-start px-5 lg:px-0 gap-5 overflow-y-auto scrollbar-hide">
         
-After 12th page
-      
+
+      after 12th
         </div>
       </section>
     </section>

@@ -320,28 +320,21 @@ const Header = () => {
                                     </div>
 
 
-                                    {/* After Graduation */}
-                                    <div>
-                                      <span
-
-                                        className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                   <div>
+                                      <NavLink
+                                        className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer nav-link border-bottom-1px dropdown-color"
+                                        to="/career/aftergraduation"
                                       >
                                         After Graduation
-
-                                      </span>
-
-
+                                      </NavLink>
                                     </div>
                                     <div>
-                                      <span
-
-                                        className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                      <NavLink
+                                        className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer nav-link border-bottom-1px dropdown-color"
+                                        to="/career/govsector"
                                       >
                                         Government Sector
-
-                                      </span>
-
-
+                                      </NavLink>
                                     </div>
                                   </div>
                                 )}

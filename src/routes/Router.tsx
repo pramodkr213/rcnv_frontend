@@ -5,9 +5,7 @@ import UpEvtPage from "../pages/UpEvtPage.tsx";
 import AddClubMember from "../pages/AddClubMembers.tsx";
 import AllClubMembers from "../pages/AllClubMembers.tsx";
 import CareerePage from "../pages/jobs/CareerePage.tsx";
-// import AdminLayout from "../layout/AdminLayout";
-// import { type User } from "../context/AuthContext";
-// import { decryptFromCookie } from "../utils/cookieCrypto";
+
 const HomeLayout = lazy(() => import("../layout/HomeLayout.tsx"));
 const AdminLogin = lazy(() => import("../pages/Login"));
 const AddHeroImage = lazy(() => import("../pages/AddHeroImage"));
@@ -180,6 +178,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/career/12th",
+        element: <CareerePage />,
+      },
+      {
+        path: "/career/aftergraduation",
+        element: <CareerePage />,
+      },
+      {
+        path: "/career/govsector",
         element: <CareerePage />,
       },
       {
