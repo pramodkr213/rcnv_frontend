@@ -8,7 +8,10 @@ import { useActionModal } from "../context/ActionModal";
 import UpdateHeroImageModal from "./UpdateHeroImageModal";
 import { useState } from "react";
 import Pagination from "./Pagination";
+import { Navigation } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/navigation";
 const MediaImageTable = () => {
   const queryClient = useQueryClient();
   const actionModal = useActionModal();

@@ -37,6 +37,11 @@ const adminNavItems = [
     to: "/admin/add-hero-image",
   },
   {
+    label: "Add Image Category",
+    icon: <BiLogoHeroku />,
+    to: "/admin/add-image-cat",
+  },
+  {
     label: "Add Gallery",
     icon: <BiImageAdd />,
     to: "/admin/add-gallery-images",
@@ -81,6 +86,16 @@ const adminNavItems = [
     icon: <FaAddressBook />,
     to: "/admin/add-directries",
   },
+  {
+    label: "Add Club Members",
+    icon: <FaAddressBook />,
+    to: "/admin/add-club-members",
+  },
+  {
+    label: "All Club Members",
+    icon: <FaAddressBook />,
+    to: "/admin/all-club-members",
+  },
    {
     label: "Add Media Coverage",
     icon: <BiLogoHeroku />,
@@ -91,11 +106,7 @@ const adminNavItems = [
     icon: <BiLogoHeroku />,
     to: "/admin/add-upcoming-event",
   },
-  {
-    label: "Add Image Category",
-    icon: <BiLogoHeroku />,
-    to: "/admin/add-image-cat",
-  },
+  
   {
     label: "Employers",
     icon: <Users size={22} />,

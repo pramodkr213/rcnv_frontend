@@ -5,10 +5,13 @@ const Footer = () => {
         <div className="row px-3">
           <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-3">
             <div className="mt-4">
-              <span className="font-w-500 text-white"> Rotary Club of Nagpur Vision</span>
+              <span className="font-w-500 text-white">
+                {" "}
+                Rotary Club of Nagpur Vision
+              </span>
               <p className="footer-text mt-xl-2 mt-lg-3 mt-md-1 mt-sm-1 mt-1 para-text font-14">
-                22, 2nd Floor, 17/1 Amar Plaza Salt Lake SMS India Road, IT Park
-                Rd, beside Persistent, Nagpur
+                Plor 185, Friends Colony, Katol Road, Nagpur Maharashtra -
+                440013
               </p>
             </div>
           </div>

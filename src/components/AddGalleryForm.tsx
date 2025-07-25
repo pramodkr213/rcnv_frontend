@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 const AddGalleryForm = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [error, setError] = useState("");
-   const [errorCat, setErrorCat] = useState("");
+  const [errorCat, setErrorCat] = useState("");
   const [processing, setProcessing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
@@ -21,7 +21,7 @@ const AddGalleryForm = () => {
   //   { label: "TreePlantation", value: 2 },
   // ];
 
-     const { data: categories = [] } = useQuery({
+  const { data: categories = [] } = useQuery({
     queryKey: ["Img-cat"],
 
     queryFn: async () => {
@@ -51,7 +51,7 @@ const AddGalleryForm = () => {
       setError("Please select at least one image file.");
       return;
     }
-    if (category=='') {
+    if (category == "") {
       setErrorCat("Please select category");
       return;
     }
@@ -88,17 +88,18 @@ const AddGalleryForm = () => {
         {error && <div className="mt-2 text-xs text-red-500">{error}</div>}
       </div>
       <div>
-       
-         <Select
-        label="Category"
-        name="Category"
-         value={category}
-         onChange={(e) => setCategory(e.target.value)}
-        options={categories.map((club) => ({
-          label: club.imgcatname,
-          value: club.value?.toString() || "",
-        }))}
-      />
+        <Select
+          label="Category"
+          name="category"
+          value={category}
+          onChange={(e) => {
+            setCategory(e.target.value);
+          }}
+          options={categories.map((cat) => ({
+            label: cat.imgcatname,
+            value: cat.id?.toString() || "",
+          }))}
+        />
         
       </div>
       <ProcessingButton type="submit" processing={processing}>

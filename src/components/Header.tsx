@@ -165,14 +165,7 @@ const Header = () => {
                                     About President
                                   </NavLink>
                                 </li>
-                                <li className="nav-item">
-                                  <NavLink
-                                    className="nav-link border-bottom-1px dropdown-color"
-                                    to="/about/board"
-                                  >
-                                    Board 2025-2026
-                                  </NavLink>
-                                </li>
+                                
                                 <li className="nav-item">
                                   <NavLink
                                     className="nav-link border-bottom-1px dropdown-color"
@@ -223,6 +216,22 @@ const Header = () => {
                                     to="#"
                                   >
                                     DHADKAN
+                                  </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                  <NavLink
+                                    className="nav-link border-bottom-1px dropdown-color"
+                                    to="#"
+                                  >
+                                    UMANG
+                                  </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                  <NavLink
+                                    className="nav-link border-bottom-1px dropdown-color"
+                                    to="#"
+                                  >
+                                    DISHA
                                   </NavLink>
                                 </li>
                                  
@@ -658,12 +667,7 @@ const Header = () => {
                         >
                           About President
                         </a>
-                        <a
-                          href="/about/board"
-                          className="text-dark text-decoration-none"
-                        >
-                          Board 2025-2026
-                        </a>
+                        
                         <a
                           href="/about/club-members"
                           className="text-dark text-decoration-none"

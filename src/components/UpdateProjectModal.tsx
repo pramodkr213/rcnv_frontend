@@ -45,7 +45,7 @@ const UpdateProjectModal: React.FC<UpdateProjectModalProps> = ({
     categoryId: "",
     subCategoryId: "",
   });
-  const [newImages, setNewImages] = useState<File[]>([]);
+  const [newImages, setNewImages] = useState<File[]>([]); // only one new image allowed
   const [existingImages, setExistingImages] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [processing, setProcessing] = useState(false);
@@ -162,13 +162,16 @@ const UpdateProjectModal: React.FC<UpdateProjectModalProps> = ({
     }));
   };
 
+  // Single image upload only
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
-    setNewImages((prev) => [...prev, ...files]);
+    const file = e.target.files?.[0];
+    if (file) {
+      setNewImages([file]); // replace previous image with new one
+    }
   };
 
-  const removeNewImage = (index: number) => {
-    setNewImages((prev) => prev.filter((_, i) => i !== index));
+  const removeNewImage = () => {
+    setNewImages([]);
   };
 
   const removeExistingImage = (index: number) => {
@@ -278,9 +281,7 @@ const UpdateProjectModal: React.FC<UpdateProjectModalProps> = ({
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-700">
-              Update Project
-            </h2>
+            <h2 className="text-2xl font-bold text-purple-700">Update Project</h2>
             <button
               onClick={handleClose}
               className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -329,196 +330,132 @@ const UpdateProjectModal: React.FC<UpdateProjectModalProps> = ({
                 disabled={!formData.categoryId || loadingSubcategories}
               />
               <Input
-                label="Club Id"
-                name="clubId"
-                value={formData.clubId}
-                onChange={handleInputChange}
-              />
-              <Input
-                label="Project Title"
-                placeholder="Enter project title"
+                label="Title"
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                required
               />
-
+              <Textarea
+                label="Detail"
+                name="detail"
+                value={formData.detail}
+                onChange={handleInputChange}
+              />
               <Input
                 label="Date"
-                type="date"
                 name="date"
+                type="date"
                 value={formData.date}
                 onChange={handleInputChange}
-                required
               />
-
-              <div>
-                <label htmlFor="academicYear">Year</label>
-                <select
-                  className="pr-4 py-3 w-full rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
-                  id="academicYear"
-                  name="academicYear"
-                  aria-label="Select academic year"
-                  value={formData.academicYear}
-                  onChange={handleInputChange}
-                >
-                  {Array.from({ length: 20 }, (_, index) => {
-                    const currentYear = new Date().getFullYear();
-                    const startYear = currentYear - 1 - index;
-                    const endYear = startYear + 1;
-                    const label = `${startYear}-${endYear}`;
-                    return (
-                      <option key={label} value={label}>
-                        {label}
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
-
+              <Input
+                label="Academic Year"
+                name="academicYear"
+                value={formData.academicYear}
+                onChange={handleInputChange}
+              />
               <Input
                 label="District Name"
-                placeholder="Enter district name"
                 name="districtName"
                 value={formData.districtName}
                 onChange={handleInputChange}
-                required
               />
-
               <Input
                 label="District No"
-                placeholder="Enter district number"
                 name="destrictNo"
                 value={formData.destrictNo}
                 onChange={handleInputChange}
-                required
               />
-
               <Input
                 label="Cost"
-                type="number"
-                placeholder="Enter cost"
                 name="cost"
+                type="number"
                 value={formData.cost}
                 onChange={handleInputChange}
-                required
               />
-
               <Input
                 label="Beneficiaries"
-                type="number"
-                placeholder="Enter number of beneficiaries"
                 name="beneficiaries"
+                type="number"
                 value={formData.beneficiaries}
                 onChange={handleInputChange}
-                required
               />
-
               <Input
                 label="Man Hours"
-                type="number"
-                placeholder="Enter man hours"
                 name="manHours"
+                type="number"
                 value={formData.manHours}
                 onChange={handleInputChange}
-                required
               />
-
               <Input
                 label="Rotarians"
-                type="number"
-                placeholder="Enter number of rotarians"
                 name="rotarians"
+                type="number"
                 value={formData.rotarians}
                 onChange={handleInputChange}
-                required
               />
-
               <Input
                 label="Rotaractors"
-                type="number"
-                placeholder="Enter number of rotaractors"
                 name="rotaractors"
+                type="number"
                 value={formData.rotaractors}
                 onChange={handleInputChange}
-                required
               />
-
-              <Input
-                label="President Name"
-                placeholder="Enter president name"
-                name="presidentName"
-                value={formData.presidentName}
-                onChange={handleInputChange}
-                required
-              />
-
-              <Input
-                label="President Contact"
-                placeholder="Enter president contact"
-                name="presidentContact"
-                value={formData.presidentContact}
-                onChange={handleInputChange}
-                required
-              />
-
-              <Input
-                label="Email"
-                type="email"
-                placeholder="Enter email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-
               <Input
                 label="Facebook Link"
-                placeholder="Enter Facebook link"
                 name="facebookLink"
                 value={formData.facebookLink}
                 onChange={handleInputChange}
               />
-
+              <Input
+                label="Email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
               <Input
                 label="Instagram Link"
-                placeholder="Enter Instagram link"
                 name="instaLink"
                 value={formData.instaLink}
                 onChange={handleInputChange}
               />
-            </div>
-
-            <div>
-              <Textarea
-                label="Project Detail"
-                placeholder="Enter project detail"
-                name="detail"
-                value={formData.detail}
+              <Input
+                label="President Name"
+                name="presidentName"
+                value={formData.presidentName}
                 onChange={handleInputChange}
-                required
-                rows={4}
+              />
+              <Input
+                label="President Contact"
+                name="presidentContact"
+                value={formData.presidentContact}
+                onChange={handleInputChange}
               />
             </div>
 
-            {/* Existing Images Preview */}
+            {/* Existing Images */}
             {existingImages.length > 0 && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Existing Images
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {existingImages.map((imageUrl, index) => (
-                    <div key={index} className="relative group">
+                <div className="flex gap-4 overflow-x-auto mb-4">
+                  {existingImages.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className="relative group w-32 h-32 flex-shrink-0 rounded-lg border overflow-hidden"
+                    >
                       <img
-                        src={imageUrl}
-                        alt={`Project image ${index + 1}`}
-                        className="w-full h-32 object-cover rounded-lg border"
+                        src={img}
+                        alt={`Existing image ${idx + 1}`}
+                        className="w-full h-full object-cover"
                       />
                       <button
                         type="button"
-                        onClick={() => removeExistingImage(index)}
+                        onClick={() => removeExistingImage(idx)}
                         className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                        title="Remove image"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -528,53 +465,46 @@ const UpdateProjectModal: React.FC<UpdateProjectModalProps> = ({
               </div>
             )}
 
-            {/* New Images Preview */}
+            {/* New Image Preview */}
             {newImages.length > 0 && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  New Images
+                  New Image
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {newImages.map((file, index) => (
-                    <div key={index} className="relative group">
-                      <img
-                        src={URL.createObjectURL(file)}
-                        alt={`New image ${index + 1}`}
-                        className="w-full h-32 object-cover rounded-lg border"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => removeNewImage(index)}
-                        className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  ))}
+                <div className="relative group w-32 h-32">
+                  <img
+                    src={URL.createObjectURL(newImages[0])}
+                    alt="New image preview"
+                    className="w-full h-full object-cover rounded-lg border"
+                  />
+                  <button
+                    type="button"
+                    onClick={removeNewImage}
+                    className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    title="Remove new image"
+                  >
+                    <Trash2 size={16} />
+                  </button>
                 </div>
               </div>
             )}
 
-            {/* Add New Images */}
+            {/* Add New Image Upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Add New Images
+                Add New Image
               </label>
               <div className="flex items-center justify-center w-full">
                 <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <Plus className="w-8 h-8 mb-4 text-gray-500" />
                     <p className="mb-2 text-sm text-gray-500">
-                      <span className="font-semibold">Click to upload</span> or
-                      drag and drop
+                      <span className="font-semibold">Click to upload</span> or drag and drop
                     </p>
-                    <p className="text-xs text-gray-500">
-                      PNG, JPG, GIF up to 10MB
-                    </p>
+                    <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                   </div>
                   <input
                     type="file"
-                    multiple
                     accept="image/*"
                     onChange={handleImageChange}
                     className="hidden"
@@ -584,25 +514,16 @@ const UpdateProjectModal: React.FC<UpdateProjectModalProps> = ({
             </div>
 
             {error && (
-              <div className="text-sm text-red-500 bg-red-50 p-3 rounded-lg">
-                {error}
-              </div>
+              <p className="text-red-500 text-sm font-medium mt-2">{error}</p>
             )}
 
-            <div className="flex gap-4">
-              <button
-                type="button"
-                onClick={handleClose}
-                className="flex-1 py-3 rounded-xl border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition"
-              >
-                Cancel
-              </button>
-              <div className="flex-1">
-                <ProcessingButton type="submit" processing={processing}>
-                  Update Project
-                </ProcessingButton>
-              </div>
-            </div>
+            <ProcessingButton
+              processing={processing}
+              type="submit"
+              className="w-full mt-6"
+            >
+              Update Project
+            </ProcessingButton>
           </form>
         </motion.div>
       </motion.div>

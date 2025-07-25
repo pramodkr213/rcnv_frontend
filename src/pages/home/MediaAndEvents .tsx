@@ -132,7 +132,7 @@ const navigate= useNavigate();
                   className="img-fluid rounded"
                   style={{
                     width: "100%",
-                    height: "400px",
+                    height: "500px",
                     objectFit: "contain",
                     objectPosition: "center",
                     cursor: "pointer",
@@ -151,7 +151,7 @@ const navigate= useNavigate();
           <h4 className="mb-3 text-black">Upcoming Events</h4>
           <ul
             className="list-group shadow-sm"
-            style={{ maxHeight: "400px", overflowY: "auto" }}
+            style={{ maxHeight: "500px", overflowY: "auto" }}
           >
             {upEvent.map((event) => (
               <div

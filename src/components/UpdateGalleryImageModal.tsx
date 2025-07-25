@@ -12,6 +12,7 @@ interface UpdateGalleryImageModalProps {
     id: number;
     imageUrl: string;
     title?: string;
+    catid?: string;
   } | null;
 }
 
@@ -20,15 +21,16 @@ const UpdateGalleryImageModal: React.FC<UpdateGalleryImageModalProps> = ({
   onClose,
   image,
 }) => {
+  console.log(image,'image')
   const [file, setFile] = useState<File | null>(null);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(image?.title || "");
   const [error, setError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
 
 
 
-   const [category, setCategory] = useState("");
+   const [category, setCategory] = useState(image?.catid || "");
 
   const categories = [
     { label: "Select Category", value: "" },
@@ -145,7 +147,7 @@ const UpdateGalleryImageModal: React.FC<UpdateGalleryImageModalProps> = ({
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder={image.title || "Enter title"}
+              placeholder={ "Enter title"}
               className="block w-full text-sm text-gray-700 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 px-4 py-2"
             />
           </div>

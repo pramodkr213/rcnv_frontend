@@ -2,6 +2,8 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MediaCoveragePAge from "../components/MediaCovPage.tsx";
 import UpEvtPage from "../pages/UpEvtPage.tsx";
+import AddClubMember from "../pages/AddClubMembers.tsx";
+import AllClubMembers from "../pages/AllClubMembers.tsx";
 // import AdminLayout from "../layout/AdminLayout";
 // import { type User } from "../context/AuthContext";
 // import { decryptFromCookie } from "../utils/cookieCrypto";
@@ -239,12 +241,14 @@ const router = createBrowserRouter([
       { path: "add-sponsors", element: <AddSponsors /> },
       { path: "add-club", element: <AddClub /> },
       { path: "add-image-cat", element: <AddImageCat /> },
+       { path: "add-club-members", element: <AddClubMember /> },
       { path: "add-media-coverage", element: <AddMediaCov /> },
        { path: "add-upcoming-event", element: <AddUpcomingEvents /> },
       { path: "add-category", element: <AddCategory /> },
       { path: "add-sub-category", element: <AddSubCategory /> },
       { path: "add-project", element: <AddProject /> },
       { path: "all-projects", element: <AllProjects /> },
+       { path: "all-club-members", element: <AllClubMembers /> },
       { path: "add-directors", element: <AddDirectors /> },
       { path: "add-directries", element: <AddDirectries /> },
       { path: "employers", element: <EmployerList /> },

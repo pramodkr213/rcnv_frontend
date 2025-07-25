@@ -10,3 +10,9 @@ export function formatDate(dateString: string | null | undefined): string {
 
   return `${day} ${month} ${year}`;
 }
+
+export const formatDateNormal = (dateStr: string) => {
+  if (!dateStr) return "";
+  const [year, month, day] = dateStr.split("-");
+  return `${day}-${month}-${year}`;
+};

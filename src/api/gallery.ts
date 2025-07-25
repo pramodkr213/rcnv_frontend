@@ -4,6 +4,7 @@ export type GalleryImage = {
   id: number;
   imageUrl: string;
   title?: string;
+  category?: string;
 };
 
 export const GalleryApi = {
@@ -34,11 +35,13 @@ export const GalleryApi = {
     formData.append("image", image);
     const galleryReq = {
       title: title,
+      catid:category,
+      detail:''
     };
    
 
-    formData.append("gallary", JSON.stringify(galleryReq));
-    const res = await axiosInstance.put(`/api/admin/gallery/${id}?catid=${category}`, formData, {
+    formData.append("gallery", JSON.stringify(galleryReq));
+    const res = await axiosInstance.put(`/api/admin/gallery/${id}`, formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
     return res.data?.data;
