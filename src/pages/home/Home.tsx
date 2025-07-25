@@ -241,7 +241,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="my-4" id="jobs-latest">
+      <section className="my-4" id="jobs-latest" style={{border: "1px solid #e0e0e0"}}>
         <div className="container">
           <div className="d-flex justify-content-center">
             <h3 className="heading-with-border">Jobs</h3>
@@ -348,8 +348,16 @@ const Home = () => {
 
   <div className="tab-content">
     <div className="tab-pane fade show active">
-      <div className="row pt-2">
-        {(showAll ? jobsBySector : jobsBySector.slice(0, 4)).map((job, index) => (
+      
+        {jobsBySector.length === 0 ? (
+          <div className="text-center my-4">
+            <p className="text-muted">No jobs available in this sector.</p>
+          </div>
+        ):(
+
+          <>
+          <div className="row pt-2">
+           {(showAll ? jobsBySector : jobsBySector.slice(0, 4)).map((job, index) => (
           <Link
             key={index}
             to={`/jobs/detail/${job.id}`}
@@ -400,6 +408,9 @@ const Home = () => {
           </button>
         </div>
       )}
+          </>
+        )}
+       
     </div>
   </div>
 </div>
