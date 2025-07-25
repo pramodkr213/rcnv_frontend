@@ -120,4 +120,30 @@ getAllMembersHome: async (currentPage: number): Promise<ClubMemberResponse> => {
     return res.data?.data;
   },
 
+// getMembirthdays: async ()=> {
+//   const response = await axios.get(
+//     `/api/public/getMembersByDobAndAniversary`
+//   );
+//   return response.data;
+// }
+
+
+  getMembirthdays: async () => {
+    // Simulated data — replace this with your real API call
+    return [
+      {
+        id: 1,
+        name: "John Doe",
+        type: "Birthday",
+        date: "2025-07-25",
+      },
+      {
+        id: 2,
+        name: "Jane Smith",
+        type: "Anniversary",
+        date: "2025-07-26",
+      },
+    ];
+  },
+
 };

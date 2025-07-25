@@ -1,3 +1,5 @@
+
+import axiosInstance from "./axios";
 interface Employer {
   email: string;
   companyName: string;
@@ -25,3 +27,8 @@ export interface Job {
   isBookmark: boolean;
   numberOfApplications: number;
 }
+export const jobsApi = {
+ getbookmark: async () => {
+    const response = await axiosInstance.get(`/api/student/bookmarkedJobs`);
+    return response.data || [];
+  },}

@@ -27,7 +27,7 @@ const GallaryPage = lazy(()=>import('../pages/gallary/GallaryPage.tsx'))
 const AddUpcomingEvents = lazy(()=> import("../components/AddUpcomingEvents.tsx"));
 const AddMediaCov = lazy(() => import("../pages/AddMediaCov.tsx"));
 const AddImageCat = lazy(() => import("../pages/AddImageCat.tsx"));
-
+const BookMark = lazy(()=> import("../pages/student/BookMark.tsx"));
 const CandidateSignUp = lazy(
   () => import("../pages/jobility/auth/Register.tsx")
 );
@@ -292,7 +292,7 @@ const router = createBrowserRouter([
       { path: "dashboard", element: <StudentDashboard /> },
       { path: "profile", element: <StudentProfile /> },
       { path: "applications", element: <CommingSoon /> },
-      { path: "bookmarks", element: <CommingSoon /> },
+      { path: "bookmarks", element: <BookMark /> },
       { path: "settings", element: <CommingSoon /> },
       { path: "profile/update", element: <StudentProfileUpdate /> },
     ],

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 import { motion } from "framer-motion";
 import ProcessingButton from "./ProcessingButton";
 import { GalleryApi } from "../api/gallery";
@@ -27,10 +27,16 @@ const UpdateGalleryImageModal: React.FC<UpdateGalleryImageModalProps> = ({
   const [error, setError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
-
-
-
+  
    const [category, setCategory] = useState(image?.catid || "");
+
+  useEffect(() => {
+    if (image) {
+      setTitle(image.title || "");
+      setCategory(image.catid || "");
+    }
+  }, [image]);
+
 
   const categories = [
     { label: "Select Category", value: "" },
