@@ -624,7 +624,7 @@ const Home = () => {
         </div>
       </section>
 
-<section className="p-4">
+<section className="p-4" style={{display:"none"}}>
   <h2 className="text-xl font-semibold mb-4">Birthdays & Anniversaries</h2>
 
   {birthdays.length === 0 ? (
