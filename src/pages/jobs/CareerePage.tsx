@@ -30,39 +30,53 @@ const categoriesGovt = [
   { name: "UPSC(IES)", url: "/govtsector" },
   { name: "MPSC", url: "/govtsector" },
 ];
+
 const CareerPage: React.FC = () => {
   const location = useLocation();
 
-  // Determine which category set to show
-  const isAfter12th = location.pathname === "/aftergraduation";
-  const isGovtSector = location.pathname === "/12th";
+  const categories =
+    location.pathname === "/career/aftergraduation"
+      ? categoriesgraduation
+      : location.pathname === "/career/12th"
+      ? categories12th
+      : location.pathname === "/career/govsector"
+      ? categoriesGovt
+      : [];
 
-  const categories = location.pathname === "/career/aftergraduation"
-    ? categoriesgraduation
-    :location.pathname === "/career/12th"
-    ? categories12th
-    : location.pathname === "/career/govsector"? categoriesGovt:[];
+  const heading =
+    location.pathname === "/career/aftergraduation"
+      ? "Careers After Graduation"
+      : location.pathname === "/career/12th"
+      ? "Careers After 12th"
+      : location.pathname === "/career/govsector"
+      ? "Govt Sector Careers"
+      : "Career Categories";
+
+  const description =
+    location.pathname === "/career/aftergraduation"
+      ? "Discover a wide range of career opportunities available after graduation, from pursuing higher education like a master's or MBA to entering fields such as management, law, commerce, or science. Whether you're aiming to specialize further in your domain or pivot to a new career path, this section provides guidance on the most in-demand sectors, required qualifications, and potential career growth after completing your undergraduate studies."
+      : location.pathname === "/career/12th"
+      ? "Explore a variety of career options available after completing 12th grade, tailored to your stream—whether it's science, commerce, or arts. From professional courses like engineering, medical, and law to fields like management, design, and humanities, this section helps you understand the eligibility criteria, course duration, and future prospects to make informed decisions about your academic and career journey"
+      : location.pathname === "/career/govsector"
+      ? "Explore various government sector career opportunities by selecting a category from the sidebar. Whether you're interested in prestigious UPSC roles like IAS or IES, looking to join the Indian Armed Forces, or aiming for a secure job in banking or railways, each category provides detailed information to help you understand the eligibility, preparation path, and growth prospects in that sector."
+      : "";
 
   return (
-    <section className="my-5">
-      <div className="container mx-auto flex flex-col lg:flex-row gap-6">
+    <section className="my-10">
+      <div className="container mx-auto flex flex-col lg:flex-row gap-8 px-4">
         {/* Sidebar */}
-        <aside className="hidden lg:block w-full lg:w-[20%] pl-4">
-          <div className="bg-gray-100 rounded-lg shadow-sm p-4">
-            <h3 className="text-lg font-semibold mb-4">
-              {isAfter12th
-                ? "Careers After 12th"
-                : isGovtSector
-                ? "Govt Sector Careers"
-                : "Career Categories"}
+        <aside className="hidden lg:block w-full lg:w-1/4">
+          <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6 sticky top-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-5 border-b pb-2">
+              {heading}
             </h3>
             {categories.length > 0 ? (
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {categories.map((category) => (
                   <li key={category.name}>
                     <Link
                       to={category.url}
-                      className="block text-sm p-2 rounded hover:bg-blue-100 transition"
+                      className="block text-base text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition px-3 py-2 rounded-md"
                     >
                       {category.name}
                     </Link>
@@ -76,13 +90,11 @@ const CareerPage: React.FC = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 px-4">
-          <h2 className="text-2xl font-bold mb-3">Select a category</h2>
-          <p className="text-gray-700 text-base">
-            {location.pathname === "/career/aftergraduation" && "Browse career paths you can choose after completing 12th grade."}
-            {location.pathname === "/career/12th" && "Browse government sector careers and opportunities."}
-            {location.pathname === "/career/govsector"&& "Click a category from the sidebar to view career options."}
-          </p>
+        <main className="flex-1">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">
+            Select a Category
+          </h2>
+          <p className="text-gray-600 text-lg">{description}</p>
         </main>
       </div>
     </section>
