@@ -136,7 +136,7 @@ const MyJobs: React.FC = () => {
               ) : isError ? (
                 <div>Failed to load jobs. Please try again.</div>
               ) : (
-                jobs.map((job, index) => (
+               Array.isArray(jobs) && jobs.map((job, index) => (
                   <tr key={index} className="text-sm">
                     <td className="p-2 text-center border text-blue-500 cursor-pointer underline">
                       <span

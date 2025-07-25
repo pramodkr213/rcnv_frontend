@@ -137,7 +137,8 @@ const MyInternships: React.FC = () => {
                   Failed to load internships. Please try again.
                 </div>
               ) : (
-                internships.map((internship, index) => (
+                Array.isArray(internships) && internships.map((internship, index) => (
+              
                   <tr key={index} className="text-sm">
                     <td className="p-2 text-center border text-blue-500 cursor-pointer underline">
                       <span
