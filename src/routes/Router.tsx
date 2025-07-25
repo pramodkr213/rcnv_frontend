@@ -4,6 +4,7 @@ import MediaCoveragePAge from "../components/MediaCovPage.tsx";
 import UpEvtPage from "../pages/UpEvtPage.tsx";
 import AddClubMember from "../pages/AddClubMembers.tsx";
 import AllClubMembers from "../pages/AllClubMembers.tsx";
+import CareerePage from "../pages/jobs/CareerePage.tsx";
 // import AdminLayout from "../layout/AdminLayout";
 // import { type User } from "../context/AuthContext";
 // import { decryptFromCookie } from "../utils/cookieCrypto";
@@ -177,10 +178,10 @@ const router = createBrowserRouter([
         path: "/contact-us",
         element: <ContactUs />,
       },
-      // {
-      //   path: "/jobs/:id",
-      //   element: <JobDetail />,
-      // },
+      {
+        path: "/career/12th",
+        element: <CareerePage />,
+      },
       {
         path: "jobs",
         element: (

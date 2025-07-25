@@ -165,7 +165,7 @@ const Header = () => {
                                     About President
                                   </NavLink>
                                 </li>
-                                
+
                                 <li className="nav-item">
                                   <NavLink
                                     className="nav-link border-bottom-1px dropdown-color"
@@ -174,18 +174,18 @@ const Header = () => {
                                     Club Members
                                   </NavLink>
                                 </li>
-                                 <li className="nav-item">
-                              <NavLink className="nav-link" to="/directors">
-                                {" "}
-                                Directors
-                              </NavLink>
-                            </li>
+                                <li className="nav-item">
+                                  <NavLink className="nav-link" to="/directors">
+                                    {" "}
+                                    Directors
+                                  </NavLink>
+                                </li>
                               </ul>
                             </li>
-                      
 
 
-   <li className="nav-item ">
+
+                            <li className="nav-item ">
                               <a
                                 className="nav-link "
                                 href="#"
@@ -207,7 +207,7 @@ const Header = () => {
                                     className="nav-link border-bottom-1px dropdown-color"
                                     to="#"
                                   >
-                            KIDATHON
+                                    KIDATHON
                                   </NavLink>
                                 </li>
                                 <li className="nav-item">
@@ -234,7 +234,7 @@ const Header = () => {
                                     DISHA
                                   </NavLink>
                                 </li>
-                                 
+
                               </ul>
                             </li>
 
@@ -302,7 +302,7 @@ const Header = () => {
                               >
                                 <span
                                   className="nav-link text-decoration-none text-black cursor-pointer"
-                                  // onClick={() => toggleMenu("main")}
+                                // onClick={() => toggleMenu("main")}
                                 >
                                   Career Cell
                                 </span>
@@ -311,253 +311,37 @@ const Header = () => {
                                   <div className="absolute left-0 w-56 bg-white shadow-lg border rounded-md z-50">
                                     {/* After 12th */}
                                     <div>
-                                      <span
-                                        onClick={() =>
-                                          toggleSubMenu("after12th")
-                                        }
-                                        className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                      <NavLink
+                                        className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer nav-link border-bottom-1px dropdown-color"
+                                        to="/career/12th"
                                       >
                                         After 12th
-                                        <span>&#9662;</span>
-                                      </span>
-
-                                      {openSubMenu === "after12th" && (
-                                        <div className="pl-4">
-                                          {/* Science */}
-                                          <div>
-                                            <span
-                                              onClick={() =>
-                                                toggleSubSubMenu("science")
-                                              }
-                                              className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                            >
-                                              Science
-                                              <span>&#9662;</span>
-                                            </span>
-
-                                            {openSubSubMenu === "science" && (
-                                              <div className="pl-4">
-                                                {/* PCM */}
-                                                <span
-                                                  onClick={togglePcmMenu}
-                                                  className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                                >
-                                                  PCM
-                                                  <span>&#9662;</span>
-                                                </span>
-
-                                                {openPcmMenu && (
-                                                  <div className="pl-4">
-                                                    <NavLink
-                                                      to="/career?filter=btech"
-                                                      className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                    >
-                                                      B.Tech
-                                                    </NavLink>
-
-                                                    <NavLink
-                                                      to="/career?filter=bca"
-                                                      className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                    >
-                                                      BCA
-                                                    </NavLink>
-                                                    <NavLink
-                                                      to="/career?filter=bsc"
-                                                      className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                    >
-                                                      B.Sc
-                                                    </NavLink>
-                                                    <NavLink
-                                                      to="/career?filter=barch"
-                                                      className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                    >
-                                                      B.Arch
-                                                    </NavLink>
-                                                  </div>
-                                                )}
-
-                                                {/* PCMB */}
-                                                <div>
-                                                  <span
-                                                    onClick={togglePcmbMenu}
-                                                    className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                                  >
-                                                    PCMB
-                                                    <span>&#9662;</span>
-                                                  </span>
-                                                  {openPcmbMenu === "pcmb" && (
-                                                    <div className="pl-4">
-                                                      <NavLink
-                                                        to="/career?filter=mbbs"
-                                                        className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                      >
-                                                        MBBS
-                                                      </NavLink>
-                                                      <NavLink
-                                                        to="/career?filter=bds"
-                                                        className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                      >
-                                                        BDS
-                                                      </NavLink>
-                                                      <NavLink
-                                                        to="/career?filter=bsc-biology"
-                                                        className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                      >
-                                                        B.Sc (Botany, Nursing,
-                                                        etc)
-                                                      </NavLink>
-                                                      <NavLink
-                                                        to="/career?filter=bpharma"
-                                                        className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                      >
-                                                        B.Pharma
-                                                      </NavLink>
-                                                      <NavLink
-                                                        to="/career?filter=paramedics"
-                                                        className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                      >
-                                                        Paramedics
-                                                      </NavLink>
-                                                    </div>
-                                                  )}
-                                                </div>
-                                              </div>
-                                            )}
-                                          </div>
-
-                                          {/* Commerce */}
-                                          <div>
-                                            <span
-                                              onClick={() =>
-                                                toggleSubSubMenu("commerce")
-                                              }
-                                              className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                            >
-                                              Commerce
-                                              <span>&#9662;</span>
-                                            </span>
-                                            {openSubSubMenu === "commerce" && (
-                                              <div className="pl-4">
-                                                <NavLink
-                                                  to="/career?filter=bcom"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  B.Com
-                                                </NavLink>
-                                                <NavLink
-                                                  to="/career?filter=bba"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  BBA
-                                                </NavLink>
-                                                <NavLink
-                                                  to="/career?filter=ca"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  C.A.
-                                                </NavLink>
-                                                <NavLink
-                                                  to="/career?filter=cs"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  C.S.
-                                                </NavLink>
-                                              </div>
-                                            )}
-                                          </div>
-
-                                          {/* Arts */}
-                                          <div>
-                                            <span
-                                              onClick={() =>
-                                                toggleSubSubMenu("arts")
-                                              }
-                                              className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                            >
-                                              Arts
-                                              <span>&#9662;</span>
-                                            </span>
-                                            {openSubSubMenu === "arts" && (
-                                              <div className="pl-4">
-                                                <NavLink
-                                                  to="/career?filter=ba"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  B.A.
-                                                </NavLink>
-                                                <NavLink
-                                                  to="/career?filter=bjms"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  BJMS
-                                                </NavLink>
-                                                <NavLink
-                                                  to="/career?filter=bfa"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  BFA
-                                                </NavLink>
-                                                <NavLink
-                                                  to="/career?filter=bbs"
-                                                  className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                                >
-                                                  BBS
-                                                </NavLink>
-                                              </div>
-                                            )}
-                                          </div>
-
-                                          {/* Law */}
-                                          <NavLink
-                                            to="/career?filter=llb"
-                                            className="block nav-link px-4 py-2"
-                                          >
-                                            Law (LLB)
-                                          </NavLink>
-                                        </div>
-                                      )}
+                                      </NavLink>
                                     </div>
+
 
                                     {/* After Graduation */}
                                     <div>
                                       <span
-                                        onClick={() =>
-                                          toggleSubMenu("afterGraduation")
-                                        }
+
                                         className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
                                       >
                                         After Graduation
-                                        <span>&#9662;</span>
+
                                       </span>
 
-                                      {openSubMenu === "afterGraduation" && (
-                                        <div className="pl-4">
-                                          <NavLink
-                                            to="/career?filter=mtech"
-                                            className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                          >
-                                            M.Tech
-                                          </NavLink>
-                                          <NavLink
-                                            to="/career?filter=mca"
-                                            className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                          >
-                                            MCA
-                                          </NavLink>
-                                          <NavLink
-                                            to="/career?filter=mba"
-                                            className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                          >
-                                            MBA
-                                          </NavLink>
-                                          <NavLink
-                                            to="/career?filter=ms"
-                                            className="block nav-link px-4 py-2 hover:bg-gray-100"
-                                          >
-                                            MS
-                                          </NavLink>
-                                        </div>
-                                      )}
+
+                                    </div>
+                                    <div>
+                                      <span
+
+                                        className="flex justify-between w-full px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                      >
+                                        Government Sector
+
+                                      </span>
+
+
                                     </div>
                                   </div>
                                 )}
@@ -667,7 +451,7 @@ const Header = () => {
                         >
                           About President
                         </a>
-                        
+
                         <a
                           href="/about/club-members"
                           className="text-dark text-decoration-none"
