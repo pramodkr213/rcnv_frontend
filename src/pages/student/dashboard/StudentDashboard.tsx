@@ -295,8 +295,9 @@ const StudentDashboard: React.FC = () => {
                             app.status
                           )}`}
                         >
-                          {app.status.charAt(0).toUpperCase() +
-                            app.status.slice(1)}
+                          {app.status
+  ? app.status.charAt(0).toUpperCase() + app.status.slice(1)
+  : "Unknown"}
                         </span>
                       </div>
                     </div>
